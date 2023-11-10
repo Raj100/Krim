@@ -8,6 +8,7 @@ import requests
 import pandas as pd
 import json
 import pyjokes
+from quotes import random as rq
 import app_paths
 apps=app_paths.apps
 
@@ -121,7 +122,27 @@ if __name__ == '__main__':
                 say("according to wikipedia")
                 say(ans)
         elif "joke" in text:
+            text = text.replace("(", "")
+            text = text.replace("/", "")
+            text = text.replace("\\", "")
+            text = text.replace("!", "")
+            text = text.replace(")", "")
+            text = text.replace("&", "and")
+            text = text.replace("[", "")
+            text = text.replace("]", "")
             ans = pyjokes.get_joke()
+            print(ans)
+            say(ans)
+        elif "joke" in text:
+            text = text.replace("(", "")
+            text = text.replace("/", "")
+            text = text.replace("\\", "")
+            text = text.replace("!", "")
+            text = text.replace(")", "")
+            text = text.replace("&", "and")
+            text = text.replace("[", "")
+            text = text.replace("]", "")
+            ans = rq()
             print(ans)
             say(ans)
         elif "rain tomorrow" in text:
